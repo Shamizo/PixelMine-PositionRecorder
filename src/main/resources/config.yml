@@ -1,0 +1,30 @@
+# PixelMine 主世界位置记录器 配置文件
+
+# 是否启用调试模式（会在控制台输出详细日志）
+debug: false
+
+# 记录间隔（分钟）
+record-interval: 2
+
+# 数据库设置
+database:
+  # 数据库文件目录（相对于插件目录）
+  data-folder: "data"
+  # WAL 模式（Write-Ahead Logging），适合高并发读写
+  wal-mode: true
+  # 同步模式：NORMAL（推荐）或 FULL
+  synchronous: NORMAL
+  # 繁忙超时（毫秒）
+  busy-timeout: 5000
+
+# 要记录玩家位置的唯一世界（只能填一个）
+# 留空时默认使用 Bukkit.getWorlds().get(0) 即主世界
+# 注意: 留空时会跟随主世界配置，可能随 server.properties 中 level-name 变化
+record-world: "world"
+
+# 当玩家无任何位置记录时返回的默认坐标
+# 可通过 /pmsworld setdefault <x> <y> <z> 设置
+default-position:
+  x: 0
+  y: 64
+  z: 0

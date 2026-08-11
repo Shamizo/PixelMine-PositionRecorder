@@ -1,0 +1,29 @@
+name: PixelMine-PositionRecorder
+version: '${project.version}'
+main: com.pixelmine.positionrecorder.PositionRecorderPlugin
+api-version: '1.20'
+folia-supported: true
+author: PixelMine
+description: 主世界玩家位置记录器
+softdepend: [PlaceholderAPI]
+
+commands:
+  pmsworld:
+    description: 主世界位置记录器主命令
+    usage: /<command> [reload|get|list|save|setdefault]
+    permission: pmsworld.admin
+    aliases: [pms, pmsr]
+
+permissions:
+  pmsworld.admin:
+    description: 管理权限
+    default: op
+  pmsworld.get:
+    description: 查看自己位置权限
+    default: true
+  pmsworld.get.others:
+    description: 查看他人位置权限
+    default: op
+  pmsworld.save:
+    description: 手动保存所有玩家位置
+    default: op
